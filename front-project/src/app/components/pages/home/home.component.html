@@ -19,7 +19,7 @@
                 <tr *ngFor="let employee of allEmployees">
                     <td>{{ employee.id }}</td>
                     <td>{{ employee.nome }}</td>
-                    <td>{{ employee.dataNascimento }} </td>
+                    <td>{{ employee.dataNascimento | date:'dd/MM/yyyy' }} </td>
                     <td>{{ employee.cargo }}</td>
                     <td>{{ employee.endereco.logradouro }}</td>
                     <td>{{ employee.endereco.numero }}</td>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'src/app/services/employee/employee.service';
+import { Employee } from 'src/app/employee';
+import { environment } from 'src/environments/environment';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  allEmployees: Employee[] = [];
+  employee: Employee[] = [];
+
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.employeeService.getAllEmployees().subscribe((response) => {
+      this.allEmployees = response;
+      this.employee = response;
+    });
   }
 
 }

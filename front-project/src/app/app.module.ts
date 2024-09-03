@@ -11,6 +11,8 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { NewEmployeeComponent } from './components/pages/new-employee/new-employee.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { NewEmployeeComponent } from './components/pages/new-employee/new-employ
     AboutComponent,
     HomeComponent,
     EmployeeFormComponent,
-    NewEmployeeComponent
+    NewEmployeeComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

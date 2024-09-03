@@ -67,9 +67,10 @@
         </div>
         <div class="form-group">
             <label for="estado">Estado:</label>
-            <input type="text" placeholder="Informe o estado da residência do colaborador" formControlName="estado" required />
+            <input type="text" placeholder="Informe o estado da residência do colaborador" formControlName="estado" minlength="2" maxlength="2" required />
             <div *ngIf="estado.invalid && formDir.submitted" class="validation-error">
                 <p *ngIf="estado.errors?.['required']">O estado da residência do colaborador é obrigatório</p>
+                <p *ngIf="cpf.errors?.['minlength']">Informe apenas a sigla do estado com 2 caracteres apenas</p>
             </div>
         </div>
     </div>

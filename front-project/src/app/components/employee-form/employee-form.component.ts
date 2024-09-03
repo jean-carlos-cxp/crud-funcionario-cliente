@@ -29,7 +29,7 @@ export class EmployeeFormComponent implements OnInit {
             bairro: new FormControl('', [Validators.required]),
             cep: new FormControl('', [Validators.required]),
             cidade: new FormControl('', [Validators.required]),
-            estado: new FormControl('', [Validators.required])
+            estado: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(2)])
         })
     });
   }

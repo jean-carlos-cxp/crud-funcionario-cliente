@@ -1,0 +1,77 @@
+<form (ngSubmit)="submit()" [formGroup]="employeeForm" #formDir="ngForm">
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" placeholder="Informe o nome do colaborador" formControlName="nome" required />
+        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="nome.errors?.['required']">O nome é obrigatório</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" formControlName="dataNascimento" required />
+        <div *ngIf="dataNascimento.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="dataNascimento.errors?.['required']">A data de nascimento é obrigatória</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" placeholder="Informe o CPF do colaborador" formControlName="cpf" minlength="11" maxlength="11" required />
+        <div *ngIf="cpf.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="cpf.errors?.['required']">O CPF é obrigatória</p>
+            <p *ngIf="cpf.errors?.['minlength']">O CPF deve conter 11 caracteres</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <input type="text" placeholder="Informe o cargo do colaborador" formControlName="cargo" required />
+        <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="cargo.errors?.['required']">O Cargo é obrigatório</p>
+        </div>
+    </div>
+
+    <div formGroupName="endereco">
+        <div class="form-group">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" placeholder="Informe o logradouro da residência do colaborador" formControlName="logradouro" required />
+            <div *ngIf="logradouro.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="logradouro.errors?.['required']">O Logradouro da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="numero">Número:</label>
+            <input type="text" placeholder="Informe o número da residência do colaborador" formControlName="numero" required />
+            <div *ngIf="numero.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="numero.errors?.['required']">O Número da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" placeholder="Informe o CEP da residência do colaborador" formControlName="cep" required />
+            <div *ngIf="cep.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="cep.errors?.['required']">O CEP da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input type="text" placeholder="Informe o bairro da residência do colaborador" formControlName="bairro" required />
+            <div *ngIf="bairro.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="bairro.errors?.['required']">O Bairro da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" placeholder="Informe a cidade da residência do colaborador" formControlName="cidade" required />
+            <div *ngIf="cidade.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="cidade.errors?.['required']">A cidade da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" placeholder="Informe o estado da residência do colaborador" formControlName="estado" required />
+            <div *ngIf="estado.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="estado.errors?.['required']">O estado da residência do colaborador é obrigatório</p>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="{{ btnText }}" />
+</form>

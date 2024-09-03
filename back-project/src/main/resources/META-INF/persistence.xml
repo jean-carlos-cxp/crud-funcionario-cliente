@@ -4,6 +4,16 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="default">
-
+        <jta-data-source>java:/PostgresDS</jta-data-source>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/db_funcionario"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="Pot123"/>
+            <!-- Configuração para gerenciar o esquema -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>
+            <property name="jakarta.persistence.schema-generation.drop-source" value="none"/>
+        </properties>
     </persistence-unit>
 </persistence>
